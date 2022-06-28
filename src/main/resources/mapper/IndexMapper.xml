@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myapp.vcdex.dao.IndexDAO">
+    <insert id="IndexInsert">
+        insert into vcindex(vcdex, eth_krw, won_dollar_exrate, rtx3060_price, rtx3060_ti_price, rtx3070_price, rtx3070_ti_price, rtx3080_price, rtx3060_per_msrp, rtx3060_ti_per_msrp, rtx3070_per_msrp, rtx3070_ti_per_msrp, rtx3080_per_msrp)
+        values(#{vcdex},#{eth_krw},#{won_dollar_exrate},#{rtx3060_price},#{rtx3060_ti_price},#{rtx3070_price},#{rtx3070_ti_price},#{rtx3080_price},#{rtx3060_per_msrp},#{rtx3060_ti_per_msrp},#{rtx3070_per_msrp},#{rtx3070_ti_per_msrp},#{rtx3080_per_msrp})
+    </insert>
+    <select id="IndexSelect" resultType="com.myapp.vcdex.vo.IndexVO">
+        select * from vcindex
+    </select>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myapp.vcdex.dao.ReplyDAO">
+    <insert id="AddReply">
+        insert into reply(item, id, nickname, content)
+        values(#{item}, #{id}, #{nickname}, #{content})
+    </insert>
+    <select id="ReplyList" resultType="com.myapp.vcdex.vo.ReplyVO">
+        select id, nickname, content, writedate from reply
+        where item=#{item}
+        order by writedate desc
+    </select>
+    <delete id="DeleteReply">
+        delete from reply
+        where id=#{id} and writedate=#{writedate}
+    </delete>
+</mapper>

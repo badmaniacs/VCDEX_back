@@ -1,0 +1,18 @@
+server:
+  port: 8087
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/vcdex?characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: asd10040!
+
+
+mybatis:
+  type-aliases-package: com.myapp.vcdex.vo
+  mapper-locations: mapper/*Mapper.xml

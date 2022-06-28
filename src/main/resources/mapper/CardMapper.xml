@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myapp.vcdex.dao.CardDAO">
+    <update id="CardUpdate" parameterType="java.util.ArrayList">
+        <foreach collection="list" item="item" index="index" separator=";">
+            update ${item.name}
+            set price=#{item.price}, link=#{item.link}
+            where no=#{item.no}
+        </foreach>
+    </update>
+    <select id="CardPrice" resultType="int">
+        select avg(price) from ${CardName}
+    </select>
+    <select id="CardList" resultType="com.myapp.vcdex.vo.CardVO">
+        select * from ${name}
+    </select>
+    <select id="CardData" resultType="com.myapp.vcdex.vo.CardVO">
+        select * from modeldata
+        where name=#{name}
+    </select>
+</mapper>
